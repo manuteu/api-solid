@@ -3,7 +3,7 @@ import { env } from "./env";
 import { ZodError } from "zod";
 import { usersRoutes } from '@/http/controllers/users/routes'
 import { gymsRoutes } from '@/http/controllers/gyms/routes'
-import { checkInsRoutes } from "./http/check-ins/routes";
+import { checkInsRoutes } from "./http/controllers/check-ins/routes";
 import fastifyCookie from "@fastify/cookie";
 import fastifyJwt from "@fastify/jwt";
 
