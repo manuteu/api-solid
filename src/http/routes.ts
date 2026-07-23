@@ -1,17 +1,10 @@
 import { FastifyInstance } from 'fastify'
-import { register } from './controllers/register'
-import { authenticate } from './controllers/authenticate'
-import { profile } from './controllers/profile'
-import fastifyJwt from '@fastify/jwt'
-import { env } from '@/env'
 import { verifyJwt } from './middlewares/verify-jwt'
+import { register } from './controllers/users/register'
+import { authenticate } from './controllers/users/authenticate'
+import { profile } from './controllers/users/profile'
 
 export async function appRoutes(app: FastifyInstance) {
-  app.register(fastifyJwt, {
-    secret: env.JWT_SECRET,
-  })
-  
-
   app.post('/users', register)
   app.post('/sessions', authenticate)
 
